@@ -1,9 +1,9 @@
-import { Checkbox } from "../components/elements/Input/Input"
+import Schedule from "../components/patterns/Schedule"
 
 const Availability = () => {
   return (
     <div>
-        <Checkbox/>
+        <Schedule/>
     </div>
   )
 }

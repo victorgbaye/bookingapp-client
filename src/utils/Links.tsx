@@ -2,7 +2,7 @@ import calendar from '../assets/images/calendar.svg'
 import bookings from '../assets/images/bookings.svg'
 import clients from '../assets/images/clients.svg'
 import services from '../assets/images/services.svg'
-import profile from '../assets/images/profile.svg'
+import preference from '../assets/images/preference.svg'
 
 
 const links = [
@@ -27,9 +27,9 @@ const links = [
       icon: services,
     },
     {
-      text: 'settings',
-      path: 'settings',
-      icon: profile,
+      text: 'preference',
+      path: 'preference',
+      icon: preference,
     }
   ];
   

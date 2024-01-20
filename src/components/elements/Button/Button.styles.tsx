@@ -9,7 +9,7 @@ export const DefaultButton = styled.button`
     border: 1px solid var(--Primary-700);
     /* Layout */
     display: flex;
-    height: 44px;
+    height: 40px;
     padding: 10px 32px;
     justify-content: center;
     align-items: center;

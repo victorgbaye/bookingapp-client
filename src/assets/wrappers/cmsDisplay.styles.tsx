@@ -10,6 +10,8 @@ const Wrapper = styled.section`
         display: flex;
         flex: 1;
         width: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
     }
 `
 export default Wrapper

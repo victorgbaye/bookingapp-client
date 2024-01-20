@@ -7,16 +7,19 @@ const Wrapper = styled.aside`
     display: block;
     /* box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1); */
     font-family: 'Open Sans', sans-serif;
+    height: 100vh;
     .sidebar-container{
         background: var(--white-secondary-100);
         border-right: 1px solid #E3E3E3;
         min-height: 100vh;
         height: 100%;
-        width: 280px;
+        width: 216px;
         padding: 24px 20px;
         display: flex;
         flex-direction: column;
         gap: 60px;
+        position: relative;
+        
 
 
 
@@ -28,12 +31,22 @@ const Wrapper = styled.aside`
         position: absolute;
         flex: 1;
         bottom: 24px;
+        color: #515151;
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 19.2px */
+        letter-spacing: 0.204px;
+        text-transform: capitalize;
         .logout{
             display: flex;
             align-items: center;
             align-self: stretch;
             gap: var(--SM);
             padding: var(--SM);
+            font-size: 14px;
+            letter-spacing: 0.272px;
         }
         section{
             display: flex;
@@ -52,7 +65,7 @@ const Wrapper = styled.aside`
         /* border: 1px solid red; */
         border-radius: var(--XS, 8px);
         p{
-            font-size: 16px;
+            font-size: 14px;
         }
 
     }

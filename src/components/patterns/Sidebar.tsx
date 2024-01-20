@@ -22,7 +22,6 @@ const Sidebar = () => {
                     <img src={profilePic}/>
                     <span>
                         <p>Julliet Johnson</p>
-                        <p>Small Description text</p>
                     </span>
                 </section>
             </footer>

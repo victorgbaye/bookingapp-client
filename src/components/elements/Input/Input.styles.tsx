@@ -4,7 +4,7 @@ import check from '../../../assets/images/check.svg'
 export const DefaultInput = styled.input`
     display: flex;
     width: 400px;
-    height: 48px;
+    height: 40px;
     padding: var(--XS, 8px) var(--SM, 16px);
     align-items: center;
     gap: var(--XS, 8px);
@@ -13,6 +13,8 @@ export const DefaultInput = styled.input`
     border: 1px solid #F8F8F8;
     background: #F8F8F8;
     outline: none;
+    font-size: 14px;
+
 
     ::placeholder{
         color: var(--Grey-001, #A6A6A6);
@@ -50,7 +52,7 @@ export const CheckboxInput = styled.input`
  appearance: none;
   width: 12px;
   height: 12px;
-  margin-right: 8px;
+  /* margin-right: 8px; */
   border: 1px solid #E3E3E3;
   border-radius: 4px;
   outline: none;
@@ -81,6 +83,42 @@ export const CheckboxInput = styled.input`
 `;
 
 export const CheckboxLabel = styled.label`
-  /* Move the label to the right of the checkbox */
+    color: #000;
+
+    /* Body/Paragrapgh (Small) */
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.238px;
   margin-left: 8px; /* Adjust spacing as needed */
+`;
+
+
+export const SelectInput = styled.select`
+  width: 142px;
+  height: 32px;
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+
+
+  &:hover,
+  &:focus {
+    /* border-color: #1890ff; */
+    cursor: pointer;
+  }
+`;
+export const StyledOption = styled.option`
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+  color: #1E1E1E;
+
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
 `;

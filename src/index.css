@@ -17,7 +17,7 @@
   --SM: 16px;
   font-family: 'Inter', 'Nunito' 'Open Sans' system-ui, 'Avenir', Helvetica, Arial, sans-serif; 
 
-
+  
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -32,7 +32,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; */
 }
-
+body{
+  max-height: 100vh;
+  /* overflow-y: hidden; */
+}
 /* a {
   font-weight: 500;
   color: #646cff;
@@ -87,7 +90,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-
+.body{
+  padding: 20px;
+}
 .input-label{
   display: flex;
   flex-direction: column;
@@ -96,7 +101,7 @@ button:focus-visible {
 
 /* availability */
 .availability-container{
-  
+
 }
 
 /* >>>>>>>> */
