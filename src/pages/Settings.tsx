@@ -14,9 +14,11 @@ const Settings = () => {
     <Wrapper>
         <main className='cms-display'>
             <Sidebar/>
-            <div >
+            <div style={{position:'relative'}}>
               <PageHeader/>
-              <Tabs tabs={tabsData}/>
+              <div className="body">
+                <Tabs tabs={tabsData}/>
+              </div>
 
             </div>
         </main>

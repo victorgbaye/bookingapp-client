@@ -9,7 +9,7 @@ const Clients = () => {
     <Wrapper>
         <main className='cms-display'>
             <Sidebar/>
-            <div >
+            <div style={{position:'relative'}}>
             <PageHeader/>
             <div className='body'>
                 <DataDisplayWrapper>

@@ -32,7 +32,7 @@ const Bookings = () => {
     <Wrapper>
       <main className="cms-display">
         <Sidebar />
-        <div>
+        <div style={{position:'relative'}}>
           <PageHeader />
             <Menu status={status} filterItems={filterItems} activeStatus={activeStatus}/>
           <div className="body">

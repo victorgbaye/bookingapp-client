@@ -12,6 +12,10 @@ const Wrapper = styled.header`
     font-family: 'Inter', sans-serif;
     border-bottom: 1px solid var(--greys-primary-100, #E3E3E3);
     background: var(--greys-primary-50, #F7F7F7);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+ 
     .page-title{
         display: flex;
         align-items: center;

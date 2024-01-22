@@ -11,9 +11,9 @@ const Services = () => {
     <Wrapper>
         <main className='cms-display'>
             <Sidebar/>
-            <div>
+            <div style={{position: 'relative'}}>
             <PageHeader/>
-            <div className='body'>
+            <div className='body' style={{marginTop:'80px', overflowY: 'auto', maxHeight: 'calc(100vh - 80px)'}}>
             <DataDisplayWrapper>
                     <header>
                         {dataheader.map((header)=><p>{header}</p>)}

@@ -92,6 +92,12 @@ button:focus-visible {
 } */
 .body{
   padding: 20px;
+  margin-top: 80px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .input-label{
   display: flex;

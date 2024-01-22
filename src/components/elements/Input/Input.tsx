@@ -16,11 +16,13 @@ export const Input = (props: InputProps) => {
 
  type Checkbpxprop = {
     label: string
+    checked: boolean;
+    onChange: () => void;
  }
 export const Checkbox = (props: Checkbpxprop) => {
     return (
         <CheckboxWrapper>
-        <CheckboxInput type='checkbox'/>
+        <CheckboxInput type='checkbox'  checked={props.checked} onChange={props.onChange}/>
         <CheckboxLabel>{props.label}</CheckboxLabel>
       </CheckboxWrapper>
     );

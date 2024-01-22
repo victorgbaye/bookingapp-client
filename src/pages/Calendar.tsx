@@ -35,16 +35,18 @@ const Calendar = () => {
     <Wrapper>
       <main className="cms-display">
         <Sidebar />
-        <div style={{flex:1, overflowY:'auto'}}>
+        <div style={{ position:'relative'}}>
           <PageHeader />
-          <CalendarComponent
-            currentDate={currentDate}
-            onTodayClick={handleTodayClick}
-            onNextClick={handleNextClick}
-            onPrevClick={handlePrevClick}
-            hourRef={hourRef}
-            currentHour={currentHour}
-          />
+          <div style={{marginTop:'80px', overflowY: 'auto', maxHeight: 'calc(100vh - 80px)'}}>
+            <CalendarComponent
+              currentDate={currentDate}
+              onTodayClick={handleTodayClick}
+              onNextClick={handleNextClick}
+              onPrevClick={handlePrevClick}
+              hourRef={hourRef}
+              currentHour={currentHour}
+            />
+          </div>
         </div>
       </main>
     </Wrapper>

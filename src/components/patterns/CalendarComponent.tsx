@@ -6,7 +6,13 @@ const WeekCalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
   max-width: 100%;
   margin: 0 auto;
+  overflow: scroll;
   /* overflow-y: auto; */
+  position: relative;
+  /* overflow: scroll; */
+  height: 100vh;
+  overflow: auto;
+  position: relative;
 `;
 
 const Header = styled.div`
@@ -16,6 +22,12 @@ const Header = styled.div`
   padding: 10px;
   border: 1px solid #ddd;
   /* position: fixed; */
+  position: fixed;
+  /* top: 0; */
+  width: 100%;
+  z-index: 1;
+  flex: 1;
+  background:white;
 
 
 `;
@@ -23,6 +35,9 @@ const Header = styled.div`
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
+  margin-top: 68px;
+  position: relative;
+  overflow: hidden;
 `;
 
 const DayCell = styled.td<{ isToday: boolean; isCurrentTime: boolean }>`
@@ -34,6 +49,9 @@ const DayCell = styled.td<{ isToday: boolean; isCurrentTime: boolean }>`
   width: 160px;
   height: 80px;
   /* background-color: yellow; */
+  overflow-y: auto;
+  
+
 
   &:before {
     content: '';
@@ -60,7 +78,10 @@ const DayCell2 = styled.td<{ isToday: boolean; isCurrentTime: boolean }>`
   position: relative;
   width: 160px;
   height: 80px;
-  /* background-color: yellow; */
+  /* background-color: green; */
+  position: sticky;
+  top: 0;
+  
 
   &:before {
     content: '';
@@ -109,6 +130,7 @@ const HourSidePanel = styled.td`
   border: 1px solid #ddd;
   text-align: center;
   padding: 10px;
+  
 `;
 
 const HourCell = styled.td<{ isCurrentTime: boolean }>`
@@ -132,6 +154,7 @@ const HourCell = styled.td<{ isCurrentTime: boolean }>`
   font-weight: 400;
   line-height: 160%; /* 25.6px */
   letter-spacing: 0.272px;
+  overflow-y: auto;
 `;
 
 const Button = styled.button`
@@ -182,9 +205,10 @@ const CalendarComponent: React.FC<WeekCalendarProps> = ({
   const currentHour = moment().hours();
   const currentDay = moment().startOf('day');
 
+
   return (
     <WeekCalendarContainer>
-      <Header>
+      <Header >
         <Button onClick={onPrevClick}>&larr;</Button>
         <Button onClick={onNextClick}>&rarr;</Button>
         <div>{currentDate.format('MMMM YYYY')}</div>
@@ -192,7 +216,8 @@ const CalendarComponent: React.FC<WeekCalendarProps> = ({
       </Header>
       <Table>
         <tbody>
-          <tr>
+          <tr 
+          >
             <HourSidePanel />
             {days.map((day) => (
              <DayCell2
@@ -203,10 +228,13 @@ const CalendarComponent: React.FC<WeekCalendarProps> = ({
                 <DateText>{day.format('DD')}</DateText>
                 <DayText>{day.format('dddd')}</DayText>
               </DayCell2>
+
             ))}
           </tr>
           {hours.map((hour) => (
-            <tr key={hour}>
+            <tr 
+            style={{overflowY: 'auto',}}
+            key={hour} >
               <HourCell ref={currentHour === hour ? hourRef : null} isCurrentTime={currentHour === hour}>{moment().hour(hour).format('h A')}</HourCell>
               {days.map((day) => (
                 <DayCell
