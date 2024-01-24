@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import moment from 'moment';
 import CalendarComponent from '../components/patterns/CalendarComponent';
 import Wrapper from '../assets/wrappers/cmsDisplay.styles';
@@ -37,7 +37,7 @@ const Calendar = () => {
         <Sidebar />
         <div style={{ position:'relative'}}>
           <PageHeader />
-          <div style={{marginTop:'80px', overflowY: 'auto', maxHeight: 'calc(100vh - 80px)'}}>
+          <div style={{marginTop:'80px', overflowY: 'auto', maxHeight: 'calc(100vh - 80px)', position:'relative'}}>
             <CalendarComponent
               currentDate={currentDate}
               onTodayClick={handleTodayClick}

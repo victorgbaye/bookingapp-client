@@ -25,13 +25,6 @@ const Schedule = () => {
     }));
   };
 
-  // const handleScheduleCheck =() =>{
-  //   setIsChecked(!isChecked)
-  //   setCheckboxStates((prevStates) => ({
-  //     ...prevStates,
-  //     [dayOfWeek]: !prevStates[dayOfWeek],
-  //   }));
-  // }
   return (
     <Wrapper>
         <div className='schedule'>

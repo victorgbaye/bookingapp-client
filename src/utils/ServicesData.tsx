@@ -32,6 +32,30 @@ export const barberShopServices = [
       price: '$18',
     },
     {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
+      service: 'Head Massage',
+      price: '$18',
+    },
+    {
       service: 'Full Package (Haircut, Shave, Facial)',
       price: '$50',
     },
