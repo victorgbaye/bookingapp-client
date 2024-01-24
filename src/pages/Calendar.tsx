@@ -4,6 +4,7 @@ import CalendarComponent from '../components/patterns/CalendarComponent';
 import Wrapper from '../assets/wrappers/cmsDisplay.styles';
 import PageHeader from '../components/patterns/PageHeader';
 import Sidebar from '../components/patterns/Sidebar';
+import { DefaultButton, TransparentButton } from '../components/elements/Button/Button.styles';
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(moment());
@@ -36,7 +37,10 @@ const Calendar = () => {
       <main className="cms-display">
         <Sidebar />
         <div style={{ position:'relative'}}>
-          <PageHeader />
+          <PageHeader>
+            <TransparentButton>Share Link</TransparentButton>
+            <DefaultButton>Create Booking</DefaultButton>
+          </PageHeader>
           <div style={{marginTop:'80px', overflowY: 'auto', maxHeight: 'calc(100vh - 80px)', position:'relative'}}>
             <CalendarComponent
               currentDate={currentDate}

@@ -5,6 +5,7 @@ import Sidebar from '../components/patterns/Sidebar';
 import { reservationsData } from '../utils/BookingsData';
 import { BookingStatus, TableDataDisplayWrapper } from '../assets/wrappers/TableDataDisplay';
 import Menu from '../components/patterns/Menu';
+import { DefaultButton, TransparentButton } from '../components/elements/Button/Button.styles';
 
 const Bookings = () => {
   const [BookingData, setBookingData] = useState(reservationsData);
@@ -33,7 +34,10 @@ const Bookings = () => {
       <main className="cms-display">
         <Sidebar />
         <div style={{position:'relative'}}>
-          <PageHeader />
+          <PageHeader>
+          <TransparentButton>Share Link</TransparentButton>
+            <DefaultButton>Create Booking</DefaultButton>
+          </PageHeader>
             <Menu status={status} filterItems={filterItems} activeStatus={activeStatus}/>
           <div className="body">
             <TableDataDisplayWrapper>

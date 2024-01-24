@@ -1,5 +1,6 @@
 import { DataDisplayWrapper } from "../assets/wrappers/DataDisplay.styles"
 import Wrapper from "../assets/wrappers/cmsDisplay.styles"
+import { DefaultButton } from "../components/elements/Button/Button.styles"
 import PageHeader from "../components/patterns/PageHeader"
 import Sidebar from "../components/patterns/Sidebar"
 import {ClientsData} from '../utils/ClientsData'
@@ -10,7 +11,9 @@ const Clients = () => {
         <main className='cms-display'>
             <Sidebar/>
             <div style={{position:'relative'}}>
-            <PageHeader/>
+            <PageHeader>
+                <DefaultButton>Add client</DefaultButton>
+            </PageHeader>
             <div className='body'>
                 <DataDisplayWrapper>
                     <header>

@@ -1,8 +1,12 @@
 import Wrapper from "../../assets/wrappers/PageHeader.styles"
 import circle from '../../assets/images/circle.svg'
-import { DefaultButton, TransparentButton } from "../elements/Button/Button.styles"
+// import { DefaultButton, TransparentButton } from "../elements/Button/Button.styles"
 
-const PageHeader = () => {
+interface PageHeaderType{
+  children?: React.ReactNode
+}
+
+const PageHeader:React.FC<PageHeaderType> = ({children}) => {
   return (
     <Wrapper>
         <section className='page-title'>
@@ -10,8 +14,8 @@ const PageHeader = () => {
             <p>{window.location.pathname.slice(1).charAt(0).toUpperCase() + window.location.pathname.slice(2)}</p>
         </section>
         <section className='header-actions'>
-            <TransparentButton>Share Link</TransparentButton>
-            <DefaultButton>Create booking</DefaultButton>
+            {children}
+
         </section>
     </Wrapper>
   )
