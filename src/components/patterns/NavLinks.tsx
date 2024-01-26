@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import links from '../../utils/Links'
 
 const NavLinks = () => {
@@ -7,15 +8,16 @@ const NavLinks = () => {
             links.map((link)=>{
                 const { text, icon, path } = link;
                 return(
-                    <div
-                    className='nav-link'
-                    key={text}
-                    onClick={()=>{window.location.pathname = path}}
+                        <Link
+                        className='nav-link'
+                        key={text}
+                        to={ `/${path}`} style={{textDecoration:'none', color:'inherit'}}
+                        // onClick={()=>{window.location.pathname = path}}
 
-                    >
-                        < img className='icon' src={icon}/>
-                        <p >{text}</p>
-                    </div>
+                        >
+                            < img className='icon' src={icon}/>
+                            <p >{text}</p>
+                        </Link>
                 )
             })
         }

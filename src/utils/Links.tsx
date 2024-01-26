@@ -8,7 +8,7 @@ import preference from '../assets/images/preference.svg'
 const links = [
     {
         text: 'calendar',
-        path: '/',
+        path: 'calendar',
         icon: calendar,
     },
     {
