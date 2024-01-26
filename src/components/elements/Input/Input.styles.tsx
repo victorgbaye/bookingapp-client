@@ -3,7 +3,8 @@ import check from '../../../assets/images/check.svg'
 
 export const DefaultInput = styled.input`
     display: flex;
-    width: 400px;
+    width: 100%;
+    min-width: 400px;
     height: 40px;
     padding: var(--XS, 8px) var(--SM, 16px);
     align-items: center;

@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Wrapper from '../assets/wrappers/cmsDisplay.styles';
-import PageHeader from '../components/patterns/PageHeader';
 import Sidebar from '../components/patterns/Sidebar';
 import { reservationsData } from '../utils/BookingsData';
 import { BookingStatus, TableDataDisplayWrapper } from '../assets/wrappers/TableDataDisplay';
 import Menu from '../components/patterns/Menu';
-import { DefaultButton, TransparentButton } from '../components/elements/Button/Button.styles';
+import HomePageHeader from '../components/patterns/HomePageHeader';
+import { ContextualMenu } from '../assets/wrappers/ContextualMenu.styles';
 
 const Bookings = () => {
   const [BookingData, setBookingData] = useState(reservationsData);
@@ -13,6 +13,9 @@ const Bookings = () => {
 
   const allCategories = ['All', ...new Set(BookingData.map((data) => data.status))];
   const [status] = useState< string[]>(allCategories);  // Updated line
+  const [showContextual, setShowContextual] = useState(false)
+  const [activeRow, setActiveRow] = useState<string | null>(null);
+
 
   const filterItems = (status: string | string[] = [...allCategories]) => {
     console.log(status);
@@ -28,16 +31,28 @@ const Bookings = () => {
 
 
   const dataheader = ['Name & Email', 'Service', 'Time', 'Phone No', 'Status', ''];
+  const viewContextualMenuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (viewContextualMenuRef.current && !viewContextualMenuRef.current.contains(event.target as Node)) {
+        setShowContextual(false);
+      }
+    };
 
+    if (showContextual) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showContextual]);
   return (
     <Wrapper>
       <main className="cms-display">
         <Sidebar />
         <div style={{position:'relative'}}>
-          <PageHeader>
-          <TransparentButton>Share Link</TransparentButton>
-            <DefaultButton>Create Booking</DefaultButton>
-          </PageHeader>
+            <HomePageHeader/>
             <Menu status={status} filterItems={filterItems} activeStatus={activeStatus}/>
           <div className="body">
             <TableDataDisplayWrapper>
@@ -64,7 +79,15 @@ const Bookings = () => {
                     <td>
                     <BookingStatus variant={booking.status}>{booking.status}</BookingStatus>
                     </td>
-                    <td>...</td>
+                    <td style={{position:'relative'}} onClick={()=>setShowContextual(!showContextual)}>
+                      <div onClick={() => setActiveRow(booking.name)}>...</div>
+                      {activeRow === booking.name && (
+                        showContextual &&
+                      <ContextualMenu>
+                        <p className='context-menu-item'>Schedule</p>
+                      </ContextualMenu>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>

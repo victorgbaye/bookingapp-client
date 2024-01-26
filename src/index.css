@@ -144,3 +144,32 @@ button:focus-visible {
   align-items: flex-start;
   gap: 20px;
 }
+
+/* Modal Content */
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.link-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #383838;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+}
+
+/* Calendar */
+/* .rbc-calendar{
+  height: 100%;
+} */

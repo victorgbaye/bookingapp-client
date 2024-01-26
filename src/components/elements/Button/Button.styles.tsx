@@ -14,6 +14,7 @@ export const DefaultButton = styled.button`
     justify-content: center;
     align-items: center;
     gap: var(--SM, 16px);
+    cursor: pointer;
 `
 
 export const TransparentButton = styled(DefaultButton)`
@@ -21,4 +22,15 @@ export const TransparentButton = styled(DefaultButton)`
     background-color: transparent;
     color: #7C2C89;
 
+`
+interface ExtendedButtonProps{
+    backgroundColor?:string;
+    border?:string;
+    color?:string;
+}
+
+export const ExtendedButton = styled(DefaultButton)<ExtendedButtonProps>`
+    background: ${(props) => props.backgroundColor};
+    border: ${(props) => props.border};
+    color: ${(props) => props.color};
 `

@@ -1,5 +1,5 @@
-import {DefaultButton, TransparentButton} from './Button.styles.js'
+import {DefaultButton, TransparentButton, ExtendedButton} from './Button.styles.js'
 
 
 export default DefaultButton
-export  {TransparentButton}
+export  {TransparentButton, ExtendedButton}
