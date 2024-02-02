@@ -189,22 +189,22 @@ const CalendarComponent: React.FC<WeekCalendarProps> = ({
   hourRef,
 
 }) => {
+  
+  const startOfWeek = currentDate.clone().startOf('isoWeek'); // Start from Monday
+  const days = Array.from({ length: 7 }, (_, index) =>
+  startOfWeek.clone().add(index, 'days')
+  );
+  
+  const hours = Array.from({ length: 24 }, (_, index) => index);
+  const currentHour = moment().hours();
+  const currentDay = moment().startOf('day');
+  
   useEffect(() => {
     // Scroll to the current time cell when the component mounts or currentHour changes
     if (hourRef.current && currentHour >= 0 && currentHour < 24) {
       hourRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, [ hourRef]);
-
-  const startOfWeek = currentDate.clone().startOf('isoWeek'); // Start from Monday
-  const days = Array.from({ length: 7 }, (_, index) =>
-    startOfWeek.clone().add(index, 'days')
-  );
-
-  const hours = Array.from({ length: 24 }, (_, index) => index);
-  const currentHour = moment().hours();
-  const currentDay = moment().startOf('day');
-
+  }, [ hourRef, currentHour ]);
 
   return (
     <WeekCalendarContainer>

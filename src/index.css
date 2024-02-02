@@ -106,9 +106,9 @@ button:focus-visible {
 
 
 /* availability */
-.availability-container{
+/* .availability-container{
 
-}
+} */
 
 /* >>>>>>>> */
 /* Profile  */
@@ -172,4 +172,36 @@ button:focus-visible {
 /* Calendar */
 /* .rbc-calendar{
   height: 100%;
+} */
+
+.rbc-time-gutter{
+  min-width: 75.35px;
+}
+
+.rbc-label{
+  color: var(--greys-primary-600, #515151);
+/* Body/Paragraph (Medium) */
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+  letter-spacing: 0.272px;
+}
+
+.rbc-toolbar-label{
+  color: #000;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* .rbc-time-header-content{
+  position: relative;
+}
+.rbc-row .rbc-time-header-cell{
+  position: absolute;
+  bottom: 0;
 } */

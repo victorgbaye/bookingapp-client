@@ -92,7 +92,7 @@ export const CheckboxLabel = styled.label`
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.238px;
-  margin-left: 8px; /* Adjust spacing as needed */
+    margin-left: 8px; /* Adjust spacing as needed */
 `;
 
 
